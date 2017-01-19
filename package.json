@@ -1,0 +1,19 @@
+{
+  "name": "boilerplate",
+  "version": "0.0.1",
+  "description": "Node/Express, ReactJS, Authentication boilerplate for use in future projects for anyone wanting to jump right into making content.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosephLivengood/Boilerplate.git"
+  },
+  "author": "Joseph Livengood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosephLivengood/Boilerplate/issues"
+  },
+  "homepage": "https://github.com/JosephLivengood/Boilerplate#readme"
+}
