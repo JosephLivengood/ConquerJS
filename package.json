@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/JosephLivengood/Boilerplate/issues"
   },
-  "homepage": "https://github.com/JosephLivengood/Boilerplate#readme"
+  "homepage": "https://github.com/JosephLivengood/Boilerplate#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta6"
+  }
 }

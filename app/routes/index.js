@@ -1,12 +1,14 @@
 /*
-*   app/routes/index.js - Entry point for our routing
+*   app/routes/index.js - Routing 'reducer'
 */
+const apiRoutes = require('./api/index.js');
+const publicRoutes = require('./public/index.js');
+const errorMiddleware = require('./errorMiddleware.js');
 
 module.exports = function (app) {
     
-    app.route('/')
-        .get(function(req, res) {
-            res.send('Hello World!')
-        });
+    apiRoutes(app);
+    publicRoutes(app);
+    errorMiddleware(app);
     
 };

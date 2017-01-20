@@ -1,7 +1,6 @@
 /*
 *   server.js - Entry point for our site
 */
-
 const express       = require('express');
 const app           = express();
 const port          = process.env.port || 8080;
@@ -14,6 +13,7 @@ const routes        = require('./app/routes/index.js');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.set('views', './public/views')
 app.set('view engine', 'pug');
 
 /*Load Authentication*/
