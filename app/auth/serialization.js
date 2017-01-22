@@ -3,7 +3,7 @@
 */
 const passport = require('passport');
 const mongo = require('mongodb').MongoClient;
-const CONNECTION_STRING = process.env.DATABASE; //'mongodb://admin:password@ds117109.mlab.com:17109/boilerplate';
+const CONNECTION_STRING = process.env.DATABASE;
 
 module.exports = function () {
     
