@@ -4,7 +4,7 @@
   "description": "Node/Express, ReactJS, Authentication boilerplate for use in future projects for anyone wanting to jump right into making content!",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/ test/routes/ test/controllers/api test/controllers/public"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,12 @@
   "homepage": "https://github.com/JosephLivengood/Boilerplate#readme",
   "dependencies": {
     "body-parser": "^1.16.0",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "dotenv": "^4.0.0",
     "express": "^4.14.0",
     "express-session": "^1.14.2",
+    "mocha": "^3.2.0",
     "mongodb": "^2.2.21",
     "passport": "^0.3.2",
     "passport-github": "^1.1.0",
