@@ -1,12 +1,10 @@
 /*
 *   app/routes/api/index.js - Our API routes (or 'reducer' as we grow)
 */
-const path = process.cwd();
-const HelloHandler = require(path + '/app/controllers/api/helloHandler.sample.js');
+const authHelper = new (require('../../auth/authHelper.js'))();
+const helloHandler = new (require('../../controllers/api/helloHandler.sample.js'))();
 
 module.exports = function (app) {
-    
-    const helloHandler = new HelloHandler();
     
     app.route('/_api')
         .get(function(req, res) {

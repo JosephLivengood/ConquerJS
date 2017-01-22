@@ -1,8 +1,8 @@
 /*
 *   app/routes/index.js - Routing 'reducer'
 */
-const apiRoutes = require('./api/index.js');
-const publicRoutes = require('./public/index.js');
+const apiRoutes = require('./api/apiIndex.js');
+const publicRoutes = require('./public/publicIndex.js');
 const errorMiddleware = require('./errorMiddleware.js');
 
 module.exports = function (app) {

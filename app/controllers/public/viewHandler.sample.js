@@ -1,5 +1,5 @@
 /*
-*   app/controllers/api/sampleAPI.js - A sample API file to show use of controllers
+*   app/controllers/public/viewHandler.sample.js - A sample controller
 */
 function ViewHandler () {
     
@@ -14,7 +14,7 @@ function ViewHandler () {
         const title = 'default page on /'+paramFromURL;
         res.render('sample/default', {title:title});
     };
-    
+
 }
 
 module.exports = ViewHandler;

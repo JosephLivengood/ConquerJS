@@ -1,0 +1,5 @@
+{
+    "login_success_redirect" : "/profile",
+    "login_fail_redirect" : "/login",
+    "unauthenticated_redirect" : "/login"
+}
