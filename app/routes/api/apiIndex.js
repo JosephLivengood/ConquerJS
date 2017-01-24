@@ -4,13 +4,13 @@
 const AuthHelper = require('../../auth/authHelper.js');
 const HelloHandler = require('../../controllers/api/helloHandler.sample.js');
 
-module.exports = function (app, db) {
+module.exports = (app, db) => {
     
     const authHelper = new AuthHelper(db);
     const helloHandler = new HelloHandler(db);
     
     app.route('/_api')
-        .get(function(req, res) {
+        .get( (req, res) => {
             res.send('API Index')
         });
     

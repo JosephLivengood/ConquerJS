@@ -5,7 +5,7 @@ const apiRoutes = require('./api/apiIndex.js');
 const publicRoutes = require('./public/publicIndex.js');
 const errorMiddleware = require('./errorMiddleware.js');
 
-module.exports = function (app, db) {
+module.exports = (app, db) => {
     
     apiRoutes(app, db);
     publicRoutes(app, db);

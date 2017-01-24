@@ -5,7 +5,7 @@ const config = require('../../../../config.json');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
-module.exports = function (app) {
+module.exports = (app, db) => {
  
     passport.use(new GoogleStrategy({
             clientID: process.env.GOOGLE_ID,
@@ -13,7 +13,23 @@ module.exports = function (app) {
             callbackURL: "http://localhost:8080/auth/google/callback"
         },
         function(accessToken, refreshToken, profile, done) {
-            return done(null, profile);
+            db.collection('users').findAndModify(
+                {id: profile.id},
+                {},
+                {$setOnInsert:{
+                    id: profile.id,
+                    name: profile.displayName || 'John Doe',
+                    photo: profile.photos[0].value || '/resources/profile/default.jpg',
+                    email: profile.emails[0].value || '',
+                    created_on: new Date(),
+                    provider: profile.provider || '',
+                    role: 'user',
+                }},
+                {upsert:true, new: true},
+                (err, doc) => {
+                    return done(null, doc.value);
+                }
+            );
         }
     ));
     
@@ -22,6 +38,6 @@ module.exports = function (app) {
         
     app.route('/auth/google/callback')
         .get(passport.authenticate('google', { failureRedirect: config.login_fail_redirect }),
-            function(req, res) { res.redirect(config.login_success_redirect) });
+            (req, res) => { res.redirect(config.login_success_redirect) });
     
 }

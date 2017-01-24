@@ -5,9 +5,9 @@
 const GoogleStrategy = require('./impl/google.js');
 const GithubStrategy = require('./impl/github.js');
 
-module.exports = function (app) {
+module.exports = (app, db) => {
     
-    GoogleStrategy(app);
-    GithubStrategy(app);
+    GoogleStrategy(app, db);
+    GithubStrategy(app, db);
     
 }

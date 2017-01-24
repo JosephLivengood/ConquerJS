@@ -19,7 +19,7 @@ app.set('view engine', 'pug');
 dotenv.load();
 
 /*Connect to database*/
-mongo.connect(process.env.DATABASE,function(err, db) {
+mongo.connect(process.env.DATABASE, (err, db) => {
     if(err) {
         console.log('Database error: ' + err);
     } else {
@@ -32,7 +32,7 @@ mongo.connect(process.env.DATABASE,function(err, db) {
         routes(app, db);
 
         /*Start Server*/
-        app.listen(port, function() {
+        app.listen(port, () => {
             console.log('App listening on port ' + port);
         });
     }
