@@ -3,7 +3,7 @@
 */
 const config = require('../../config.json');
 
-function AuthHelper () {
+function AuthHelper (db) {
     
     this.ensureAuthenticated = (req, res, next) => {
         if (req.isAuthenticated()) {

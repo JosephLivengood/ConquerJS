@@ -5,10 +5,10 @@ const apiRoutes = require('./api/apiIndex.js');
 const publicRoutes = require('./public/publicIndex.js');
 const errorMiddleware = require('./errorMiddleware.js');
 
-module.exports = function (app) {
+module.exports = function (app, db) {
     
-    apiRoutes(app);
-    publicRoutes(app);
-    errorMiddleware(app);
+    apiRoutes(app, db);
+    publicRoutes(app, db);
+    errorMiddleware(app, db);
     
 };

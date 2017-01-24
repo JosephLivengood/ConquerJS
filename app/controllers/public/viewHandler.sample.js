@@ -1,7 +1,7 @@
 /*
 *   app/controllers/public/viewHandler.sample.js - A sample controller
 */
-function ViewHandler () {
+function ViewHandler (db) {
     
     /*  
     *   Potential use: 

@@ -3,9 +3,10 @@
 */
 const express       = require('express');
 const app           = express();
-const port          = process.env.PORT || 8080;
 const bodyParser    = require('body-parser');
 const dotenv        = require('dotenv');
+const mongo         = require('mongodb').MongoClient;
+const port          = process.env.PORT || 8080;
 
 const routes        = require('./app/routes/index.js');
 const auth          = require('./app/auth/passport.js');
@@ -17,15 +18,24 @@ app.set('views', './public/views')
 app.set('view engine', 'pug');
 dotenv.load();
 
-/*Load Authentication*/
-auth(app);
+/*Connect to database*/
+mongo.connect(process.env.DATABASE,function(err, db) {
+    if(err) {
+        console.log('Database error: ' + err);
+    } else {
+        console.log('Successful database connection');
+        
+        /*Load Authentication*/
+        auth(app, db);
 
-/*Load routing*/
-routes(app);
+        /*Load routing*/
+        routes(app, db);
 
-/*Start Server*/
-app.listen(port, function() {
-    console.log("App listening on port " + port);
+        /*Start Server*/
+        app.listen(port, function() {
+            console.log('App listening on port ' + port);
+        });
+    }
 });
 
 module.exports = app; //For testing

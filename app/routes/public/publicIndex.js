@@ -1,11 +1,15 @@
 /*
 *   app/routes/public/index.js - Our public routes (or 'reducer' as we grow)
 */
-const authHelper = new (require('../../auth/authHelper.js'))();
-const sampleViewHandler = new (require('../../controllers/public/viewHandler.sample.js'))();
-const profileHandler = new (require('../../controllers/public/profileHandler.js'))();
+const AuthHelper = require('../../auth/authHelper.js');
+const SampleViewHandler = require('../../controllers/public/viewHandler.sample.js');
+const ProfileHandler = require('../../controllers/public/profileHandler.js');
     
-module.exports = function (app) {
+module.exports = function (app, db) {
+    
+    const authHelper = new AuthHelper(db);
+    const sampleViewHandler = new SampleViewHandler(db);
+    const profileHandler = new ProfileHandler(db);
    
     app.route('/')
         .get(function(req, res) { res.send('Hello World!') });

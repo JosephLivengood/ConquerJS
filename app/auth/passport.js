@@ -7,7 +7,7 @@ const session = require('express-session');
 const strategies = require('./strategies/strategies.js');
 const serialization = require('./serialization.js');
 
-module.exports = function (app) {
+module.exports = function (app, db) {
     
     app.use(session({
         secret: process.env.SESSION_SECRET,
@@ -21,6 +21,6 @@ module.exports = function (app) {
     
     strategies(app);
     
-    serialization();
+    serialization(db);
     
 };

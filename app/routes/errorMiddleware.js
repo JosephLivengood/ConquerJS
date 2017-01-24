@@ -1,7 +1,7 @@
 /*
 *   app/routes/errorMiddleware.js - To contain any error middleware within routing such as 404's
 */
-module.exports = function (app) {
+module.exports = function (app, db) {
         
     app.use(function(req, res) {
         res.status(400);
