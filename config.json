@@ -1,4 +1,6 @@
 {
+    "app_url" : "http://localhost:8080",
+    
     "login_success_redirect" : "/profile",
     "login_fail_redirect" : "/login",
     "unauthenticated_redirect" : "/login"
