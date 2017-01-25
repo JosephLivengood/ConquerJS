@@ -4,7 +4,7 @@
   "description": "Node/Express, ReactJS, Authentication boilerplate for use in future projects for anyone wanting to jump right into making content!",
   "main": "server.js",
   "scripts": {
-    "test": "mocha test/ test/routes/ test/controllers/api test/controllers/public"
+    "test": "mocha test/ test/**"
   },
   "repository": {
     "type": "git",
