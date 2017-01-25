@@ -7,8 +7,8 @@ function UserModel (db) {
     
     /*
     *   userLoggedIn   -  Takes profile and callback as arg from strategies.
-    *                     $setOnInsert: for brand new accounts
-    *                     $set: for all users when authed
+    *                     $setOnInsert: for brand new accounts to set fields NOT set below
+    *                     $set/inc/ect: for all users when authed
     */
     this.userLoggedIn = (profile, done) => {
         db.collection('users').findAndModify(
@@ -20,11 +20,13 @@ function UserModel (db) {
                 photo: profile.photos[0].value || '/resources/profile/default.jpg',
                 email: profile.emails[0].value || '',
                 created_on: new Date(),
-                last_login: new Date(),
                 provider: profile.provider || '',
                 role: 'user',
+                click_score: 0,
             },$set:{
                 last_login: new Date()
+            },$inc:{
+                login_count: 1
             }},
             {upsert:true, new: true},
             (err, doc) => {

@@ -1,3 +1,14 @@
-h1 Profile
-p= user
-a(href='/logout') Logout
+doctype html
+html(lang='en')
+    head
+        title= user.name
+    body
+        .upper-profile
+            p Hello
+        .mid-profile
+            p= user.name
+            p We wont be continuing this view as it would just be a placeholder and delay the integration of REACT!
+        .lower-profile
+            code #{JSON.stringify(user)}    
+        footer
+            a(href='/logout') Logout
