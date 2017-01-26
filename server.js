@@ -14,7 +14,7 @@ const auth          = require('./app/auth/passport.js');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.set('views', './public/views')
+app.set('views', './public/views');
 app.set('view engine', 'pug');
 dotenv.load();
 

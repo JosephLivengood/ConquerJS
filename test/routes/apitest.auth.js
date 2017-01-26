@@ -9,9 +9,9 @@ describe('API ROUTES (Authorized)', function() {
     before(function(){
         server.request.isAuthenticated = function() {
             return true;
-        }
+        };
         server.request.user = {id: process.env.TEST_USER_ID};
-    })
+    });
     describe('/_api/click-score', function() {
         let click_score;
         it('HTTP-GET should return object {click-score: (int)}', function(done) {

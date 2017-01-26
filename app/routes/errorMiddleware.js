@@ -13,4 +13,4 @@ module.exports = (app, db) => {
         res.render('500', {title:'500: Internal Server Error', error});
     });
     
-}
+};

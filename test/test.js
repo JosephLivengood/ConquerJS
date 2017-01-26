@@ -25,6 +25,6 @@ describe('Tests', function() {
                 assert.equal(res.status, 200);
                 done();
               });
-        })
+        });
     })
 });
