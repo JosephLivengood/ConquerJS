@@ -44,7 +44,7 @@ Create your code with a clear heirarchy and package it for the future, not the p
 See [PROJECTSTRUCTURE.md](PROJECTSTRUCTURE.md)
 
 ## Installation and Starting
-#### For contributing(see [CONTRIBUTING.md](CONTRIBUTING.md):
+#### For contributing(see [CONTRIBUTING.md](CONTRIBUTING.md)):
 ```
 (Fork/pull)
 npm install
