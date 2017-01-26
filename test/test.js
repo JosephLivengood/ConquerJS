@@ -26,5 +26,5 @@ describe('Tests', function() {
                 done();
               });
         });
-    })
+    });
 });
