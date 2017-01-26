@@ -11,7 +11,6 @@ describe('API ROUTES (Authorized)', function() {
             return true;
         }
         server.request.user = {id: process.env.TEST_USER_ID};
-        console.log(server.request.user);
     })
     describe('/_api/click-score', function() {
         let click_score;
