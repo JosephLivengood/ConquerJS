@@ -34,6 +34,7 @@ mongo.connect(process.env.DATABASE, (err, db) => {
         /*Start Server*/
         app.listen(port, () => {
             console.log('App listening on port ' + port);
+            app.emit("appStarted");
         });
     }
 });

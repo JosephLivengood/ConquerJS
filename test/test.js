@@ -5,6 +5,12 @@ const server = require('../server');
 
 chai.use(chaiHttp);
 
+before(function (done) {  
+    server.on("appStarted", function(){
+        done();
+    });
+});
+
 describe('Tests', function() {
     describe('Mocha & Chai', function() {
         it('should be working perfectly', function() {
