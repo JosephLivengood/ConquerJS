@@ -11,7 +11,7 @@ module.exports = (app, db) => {
     
     app.route('/_api')
         .get( (req, res) => {
-            res.send('API Index')
+            res.send('API Index');
         });
     
     app.route('/_api/click-score')

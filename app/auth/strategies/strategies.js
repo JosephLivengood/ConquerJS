@@ -10,4 +10,4 @@ module.exports = (app, db) => {
     GoogleStrategy(app, db);
     GithubStrategy(app, db);
     
-}
+};

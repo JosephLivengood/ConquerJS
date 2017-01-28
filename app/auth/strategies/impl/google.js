@@ -25,6 +25,6 @@ module.exports = (app, db) => {
         
     app.route('/auth/google/callback')
         .get(passport.authenticate('google', { failureRedirect: config.login_fail_redirect }),
-            (req, res) => { res.redirect(config.login_success_redirect) });
+            (req, res) => { res.redirect(config.login_success_redirect); });
     
-}
+};

@@ -5,7 +5,7 @@ function ProfileHandler (db) {
     
     this.showProfile = (req, res) => {
         const user = req.user;
-        res.render('profile', {user:user});
+        res.render('profile', {user});
     };
     
 }

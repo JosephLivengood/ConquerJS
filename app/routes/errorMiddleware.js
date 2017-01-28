@@ -10,7 +10,7 @@ module.exports = (app, db) => {
 
     app.use( (error, req, res, next) => {
         res.status(500);
-        res.render('500', {title:'500: Internal Server Error', error: error});
+        res.render('500', {title:'500: Internal Server Error', error});
     });
     
-}
+};
