@@ -85,12 +85,30 @@ App listening on port 8080
 * To execute all tests, run `NPM Tests`
 
 ## Development (for personal projects)
-_coming soon_
+
+##### Webpack
+
+Webpack compiles your .jsx es6 React.js files into .js browser-friendly cross-compatable files. Compilation/building occurs from _client/app_ to _public/js_. This project sets you up to use multiple entry points. Each 'scene' in _client/app/scenes_ should be a next entry point defined in _webpack.config.js_. Its name in the config will determine the name of the compiled file that will be used as an include in your html/jade file. For example in _webpack.config.js_:
+```json
+entry: {
+    login: APP_DIR+"/scenes/login/index.jsx",
+}
+```
+The output file would be named _login.bundle.js_ within _public/js_ and would be included in your login page's HTML/Pug file (in _public/views_) like:
+```html
+HTML- <script src='../js/login.bundle.js', type='text/javascript'></script>
+
+PUG- script(src='../js/login.bundle.js', type='text/javascript')
+```
+
+##### Notes
+* After editing a .sass file in _client/style_, be sure to run `npm run build-css`. Alternatively, run `npm run watch-css` if you want it to auto compile on save.
+* After editing a .jsx file in _client/app_, be sure to run `npm run build-react`. Alternatively, run `npm run watch-react` if you want it to auto build on save.
 
 ## Deployment (for personal projects)
 * Be sure to edit your authentication strategies on their respective websites to point the callback to your deployment url.
 * Be sure to change `config.json` `"app_url"` to your correct deployment root url.
-* Ensure tests pass before deploying and be sure to webpack any changes.
+* Ensure tests pass before deploying and be sure to webpack any changes for production using `npm run build-react-prod`.
 
 ***
 

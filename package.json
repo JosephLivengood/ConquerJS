@@ -1,10 +1,15 @@
 {
   "name": "boilerplate",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Node/Express, ReactJS, Authentication boilerplate for use in future projects for anyone wanting to jump right into making content!",
   "main": "server.js",
   "scripts": {
-    "test": "mocha test/ test/**"
+    "test": "mocha test/ test/**",
+    "build-react-prod": "webpack -p",
+    "build-react": "webpack",
+    "watch-react": "webpack -d --watch",
+    "build-css" : "node-sass client/style -o public/style",
+    "watch-css" : "node-sass -w client/style -o public/style"
   },
   "repository": {
     "type": "git",
@@ -17,6 +22,10 @@
   },
   "homepage": "https://github.com/JosephLivengood/Boilerplate#readme",
   "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
     "body-parser": "^1.16.0",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
@@ -28,6 +37,10 @@
     "passport": "^0.3.2",
     "passport-github": "^1.1.0",
     "passport-google-oauth20": "^1.0.0",
-    "pug": "^2.0.0-beta6"
+    "pug": "^2.0.0-beta6",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^1.14.0",
+    "node-sass": "^4.4.0"
   }
 }
