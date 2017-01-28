@@ -13,7 +13,7 @@ function AuthHelper (db) {
     };
     
     this.ensureAdmin = (req, res, next) => {
-        if (req.isAuthenticated() && req.user.role == 'admin') {
+        if (req.isAuthenticated() && req.user.role === 'admin') {
             return next();
         }
         res.redirect(config.unauthenticated_redirect);
