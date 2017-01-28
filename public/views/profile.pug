@@ -2,6 +2,7 @@ doctype html
 html(lang='en')
     head
         title= user.name
+        link(href='../style/common.css' rel='stylesheet' type='text/css')
     body
         .upper-profile
             p Hello
@@ -12,3 +13,5 @@ html(lang='en')
             code #{JSON.stringify(user)}    
         footer
             a(href='/logout') Logout
+        #profileApp
+        script(src='../js/profile.bundle.js', type='text/javascript')
