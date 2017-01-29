@@ -1,11 +1,13 @@
 import React from 'react';
 import {render} from 'react-dom';
 import axios from 'axios';
+import ReactTooltip from 'react-tooltip'
+import ScorerLine from './subComponents/ScorerLine.jsx';
 
 export default class TopClickScorers extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {topScorers: [], loading: true}
+        this.state = {topScorers: []}
         this.refreshScores = this.refreshScores.bind(this);
     }
     componentDidMount() {
@@ -21,16 +23,21 @@ export default class TopClickScorers extends React.Component {
                 this.setState({topScorers: result.data});
             })
     }
-    loading() {
-		return this.state.loading ? 'placeholder' : '';
-	}
     render () {
         return (
             <div id='TopClickScorers'>
-                <h4>Leaderboard(refreshed every 20 seconds):</h4>
-                {this.state.topScorers.map(score => (
-                    <div className="TopScorerName" key={score.click_score}>{score.name}: {score.click_score}</div>
-                ))}
+                <div className='container'>
+                    <div className='row title'>
+                        <p className='col-12' data-tip data-for='leaderBoard'>Leaderboard</p>
+                    </div>
+                    {this.state.topScorers.map((score, index) => (
+                        <ScorerLine key={index} rank={index+1} name={score.name} score={score.click_score} />
+                    ))}
+                </div>
+                
+                <ReactTooltip place="bottom" id='leaderBoard' type='warning' effect='solid'>
+                    <span>Auto-refresh on 20 seconds!</span>
+                </ReactTooltip>
             </div>
         );
     }
