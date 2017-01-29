@@ -17,8 +17,8 @@ function ClickScore (db) {
     this.incScore = (req, res) => {
         user.findAndModify(
             {id: req.user.id},
-            {},
-            {$mul: {click_score: 2}},
+            [],
+            {$inc: {click_score: Math.floor(Math.random()*10)}},
             {new: true},
             (err, doc) => {
                 res.json({click_score: doc.value.click_score});
@@ -29,13 +29,22 @@ function ClickScore (db) {
     this.resetScore = (req, res) => {
         user.findAndModify(
             {id: req.user.id},
-            {},
-            {$set: {click_score: 0}},
+            [],
+            {$set: {click_score: 1}},
             {new: true},
             (err, doc) => {
                 res.json({click_score: doc.value.click_score});
             }
         );
+    };
+    
+    this.getTopScorers = (req, res) => {
+        user.find(
+            {click_score: {$gt: 2}},
+            {name: 1, click_score: 1, _id: 0}
+        ).sort({click_score: -1}).limit(10).toArray((err, doc) => {
+            res.json(doc);
+        }) 
     };
     
 }

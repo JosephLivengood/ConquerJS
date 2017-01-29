@@ -1,10 +1,20 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-class App extends React.Component {
-  render () {
-    return <p>Hello React Profile!</p>;
-  }
+import ClickScore from './components/ClickScore/index.jsx';
+import TopClickScorers from './components/TopClickScorers/index.jsx'
+import Account from './components/Account/index.jsx'
+
+class Profile extends React.Component {
+    render () {
+        return (
+            <div id='profile'>
+                <Account />
+                <ClickScore />
+                <TopClickScorers />
+            </div>
+        );
+    }
 }
 
-render(<App/>, document.getElementById('profileApp'));
+render(<Profile/>, document.getElementById('profileApp'));

@@ -4,14 +4,6 @@ html(lang='en')
         title= user.name
         link(href='../style/common.css' rel='stylesheet' type='text/css')
     body
-        .upper-profile
-            p Hello
-        .mid-profile
-            p= user.name
-            p We wont be continuing this view as it would just be a placeholder and delay the integration of REACT!
-        .lower-profile
-            code #{JSON.stringify(user)}    
-        footer
-            a(href='/logout') Logout
         #profileApp
+        a(href='/logout') Logout
         script(src='../js/profile.bundle.js', type='text/javascript')
