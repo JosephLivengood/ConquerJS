@@ -12,7 +12,7 @@ function ViewHandler (db) {
     this.showDefault = (req, res) => {
         const paramFromURL = req.params.param;
         const title = 'default page on /'+paramFromURL;
-        res.render('sample/default', {title:title});
+        res.render('sample/default', {title});
     };
 
 }

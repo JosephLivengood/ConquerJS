@@ -11,11 +11,11 @@ module.exports = (db) => {
     
     passport.deserializeUser( (id, done) => {
         db.collection('users').findOne(
-            {id: id},
+            {id},
             (err, doc) => {
                 done(null, doc);
             }
         );
     });
     
-}
+};

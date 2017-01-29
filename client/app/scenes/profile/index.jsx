@@ -6,6 +6,7 @@ import TopClickScorers from './components/TopClickScorers/index.jsx'
 import Account from './components/Account/index.jsx'
 import ProfileSideBar from './components/ProfileSideBar/index.jsx';
 
+
 class Profile extends React.Component {
     render () {
         return (

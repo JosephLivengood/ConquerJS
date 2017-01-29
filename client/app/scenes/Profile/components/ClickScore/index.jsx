@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import axios from 'axios';
 import ReactTooltip from 'react-tooltip'
+import ScoreButton from './subComponents/scoreButton.jsx';
 
 export default class ClickScore extends React.Component {
     constructor(props) {

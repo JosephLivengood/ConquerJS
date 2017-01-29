@@ -9,8 +9,8 @@ describe('API ROUTES (NO Authorization)', function() {
     before(function(){
         server.request.isAuthenticated = function() {
             return false;
-        }
-    })
+        };
+    });
     describe('/_api/click-score', function() {
         it('HTTP-GET should return empty object', function(done) {
             chai.request(server)
