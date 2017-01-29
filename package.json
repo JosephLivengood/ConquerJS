@@ -8,8 +8,8 @@
     "build-react-prod": "webpack -p",
     "build-react": "webpack",
     "watch-react": "webpack -d --watch",
-    "build-css" : "node-sass client/style -o public/style",
-    "watch-css" : "node-sass -w client/style -o public/style"
+    "build-css": "node-sass client/style -o public/style",
+    "watch-css": "node-sass -w client/style -o public/style"
   },
   "repository": {
     "type": "git",
@@ -34,13 +34,14 @@
     "express-session": "^1.14.2",
     "mocha": "^3.2.0",
     "mongodb": "^2.2.21",
+    "node-sass": "^4.4.0",
     "passport": "^0.3.2",
     "passport-github": "^1.1.0",
     "passport-google-oauth20": "^1.0.0",
     "pug": "^2.0.0-beta6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "webpack": "^1.14.0",
-    "node-sass": "^4.4.0"
+    "react-tooltip": "^3.2.2",
+    "webpack": "^1.14.0"
   }
 }
