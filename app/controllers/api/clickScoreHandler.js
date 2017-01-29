@@ -44,7 +44,7 @@ function ClickScore (db) {
             {name: 1, click_score: 1, _id: 0}
         ).sort({click_score: -1}).limit(10).toArray((err, doc) => {
             res.json(doc);
-        }) 
+        });
     };
     
 }
