@@ -74,3 +74,16 @@ body {
 .ScorerLine .score {
   text-align: center;
   font-size: 10px; }
+
+.placeholder {
+  animation: pulse 1s infinite;
+  min-height: 1em;
+  text-indent: -99999px; }
+
+@keyframes pulse {
+  0% {
+    background-color: #ebebeb; }
+  50% {
+    background-color: whitesmoke; }
+  100% {
+    background-color: #ebebeb; } }
