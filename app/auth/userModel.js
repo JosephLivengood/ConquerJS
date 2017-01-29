@@ -22,7 +22,7 @@ function UserModel (db) {
                 created_on: new Date(),
                 provider: profile.provider || '',
                 role: 'user',
-                click_score: 0,
+                click_score: 1,
             },$set:{
                 last_login: new Date()
             },$inc:{
