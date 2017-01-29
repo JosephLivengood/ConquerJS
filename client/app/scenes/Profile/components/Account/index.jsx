@@ -19,6 +19,7 @@ export default class Account extends React.Component {
     render () {
         return (
             <div id='Account'>
+                <h4>MongoDB Doc:</h4>
                 <div>id: <span className={this.loading()}>{this.state.user.id}</span></div>
                 <div>name: <span className={this.loading()}>{this.state.user.name}</span></div>
                 <div>email: <span className={this.loading()}>{this.state.user.email}</span></div>

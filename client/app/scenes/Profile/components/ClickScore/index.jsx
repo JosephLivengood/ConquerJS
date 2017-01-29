@@ -1,8 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import axios from 'axios';
-
-import ScoreButton from './subComponents/scoreButton.jsx';
+import ReactTooltip from 'react-tooltip'
 
 export default class ClickScore extends React.Component {
     constructor(props) {
@@ -35,9 +34,18 @@ export default class ClickScore extends React.Component {
     render () {
         return (
             <div id='ClickScore'>
-                <p onClick={this.incScore}>Score: {this.state.score}</p>
-                <ScoreButton text='Click Me!' onClick={this.incScore.bind(this)} />
-                <ScoreButton text='Reset' onClick={this.resetScore.bind(this)} />
+                <p data-tip data-for='clickScoreTT' className={this.loading()}><b>Click Score:</b> {this.state.score}</p>
+                <button className='btn btn-success' onClick={this.incScore}>+SCORE+</button> 
+                <button className='btn btn-danger' onClick={this.resetScore}>Reset</button>
+                
+                <ReactTooltip place="bottom" id='clickScoreTT' type='info' effect='solid'>
+                    <ol>
+                        <li>Click the button</li>
+                        <li>???</li>
+                        <li>PROFIT!</li>
+                    </ol>
+                    <p>(Then automate it you full stack engineer you.)</p>
+                </ReactTooltip>
             </div>
         );
     }
