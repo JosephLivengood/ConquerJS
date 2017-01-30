@@ -1,6 +1,5 @@
 # Boilerplate
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/JosephLivengood/Boilerplate.svg)](https://greenkeeper.io/)
 Node/Express, MongoDB, ReactJS, and Passport Authentication boilerplate for anyone wanting to jump right into making large or small scale projects!
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e1ab5a9bbcd0407799c34736d1a03fe9)](https://www.codacy.com/app/JosephLivengood/Boilerplate?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JosephLivengood/Boilerplate&amp;utm_campaign=Badge_Grade)
@@ -8,6 +7,7 @@ Node/Express, MongoDB, ReactJS, and Passport Authentication boilerplate for anyo
 [![Tests](https://img.shields.io/badge/Tests-Passing-green.svg?style=flat)](https://github.com/JosephLivengood/Boilerplate/tree/master/test)
 [![GitHub issues](https://img.shields.io/github/issues/JosephLivengood/Boilerplate.svg)](https://github.com/JosephLivengood/Boilerplate/issues)
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/JosephLivengood/Boilerplate.svg)](https://github.com/JosephLivengood/Boilerplate/issues)
+[![Greenkeeper badge](https://badges.greenkeeper.io/JosephLivengood/Boilerplate.svg)](https://greenkeeper.io/)
 
 ## Structure
 
