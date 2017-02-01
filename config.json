@@ -1,5 +1,5 @@
 {
-    "app_url" : "http://conquerjs.herokuapp.com",
+    "app_url" : "https://conquerjs.herokuapp.com",
     
     "login_success_redirect" : "/profile",
     "login_fail_redirect" : "/login",
