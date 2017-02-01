@@ -1,6 +1,6 @@
 {
   "name": "conquerjs",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Node/Express, ReactJS, Authentication boilerplate for use in future projects for anyone wanting to jump right into making content!",
   "main": "server.js",
   "scripts": {
