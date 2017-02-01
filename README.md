@@ -57,15 +57,17 @@ module.exports = (app, db) => {
 __Remember, files should have 1 specific focus and be organized!__
 Create your code with a clear heirarchy and package it for the future, not the present! You may even find within `apiRoutes`, for example, you have multiple types of api requests for unrelated types of data. In this case, implement a _'reducer'_ similar to above and further comparmentalize your code!
 
-#### Advanced break down of file structure and methodology
-See [PROJECTSTRUCTURE.md](PROJECTSTRUCTURE.md)
+#### Advanced break down of file structure specifically of the client
+See [DEVELOPING.md](DEVELOPING.md)
 
 ## Installation and Starting
 #### For contributing(see [CONTRIBUTING.md](CONTRIBUTING.md)):
 ```
 (Fork/pull)
+
 npm install
 cp sample.env .env
+
 (Branch, LEAVE MASTER CLEAN)
 ```
 #### For personal projects:
@@ -110,18 +112,7 @@ App listening on port 8080
 
 ##### Webpack
 
-Webpack compiles your .jsx es6 React.js files into .js browser-friendly cross-compatable files. Compilation/building occurs from _client/app_ to _public/js_. This project sets you up to use multiple entry points. Each 'scene' in _client/app/scenes_ should be a new entry point defined in _webpack.config.js_. Its name in the config will determine the name of the compiled file that will be used as an include in your html/jade file. For example in _webpack.config.js_:
-```
-entry: {
-    login: APP_DIR+"/scenes/login/index.jsx",
-}
-```
-The output file would be named _login.bundle.js_ within _public/js_ and would be included in your login page's HTML/Pug file (in _public/views_) like:
-```html
-HTML- <script src='../js/login.bundle.js', type='text/javascript'></script>
-
-PUG- script(src='../js/login.bundle.js', type='text/javascript')
-```
+Webpack compiles your .jsx es6 React.js files into .js browser-friendly cross-compatable files. Compilation/building occurs from _client/app_ to _public/js_. This project sets you up to use multiple entry points. Each 'scene' in _client/app/scenes_ should be a new entry point defined in _webpack.config.js_. Its name in the config will determine the name of the compiled file that will be used as an include in your html/jade file. See [DEVELOPING.md](DEVELOPING.md)).
 
 ##### Notes
 * After editing a .sass file in _client/style_, be sure to run `npm run build-css`. Alternatively, run `npm run watch-css` if you want it to auto compile on save.
