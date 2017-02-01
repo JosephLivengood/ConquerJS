@@ -8,8 +8,8 @@ var APP_DIR = path.resolve(__dirname, 'client/app');
 var config = {
     entry: {
         index: APP_DIR+"/index.jsx",
-        profile: APP_DIR+"/scenes/profile/index.jsx",
-        home: APP_DIR+"/scenes/home/index.jsx"
+        profile: APP_DIR+"/scenes/Profile/index.jsx",
+        home: APP_DIR+"/scenes/Home/index.jsx"
     },
     output: {
         path: BUILD_DIR,
