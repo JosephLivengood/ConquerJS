@@ -2,11 +2,57 @@ body {
   margin: 30px;
   background-color: orange; }
 
+.fadeItOut {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  opacity: 0; }
+
+.fadeItIn {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  opacity: 1 !important; }
+
+.btn-social {
+  color: white !important;
+  text-align: center !important;
+  margin: 5px; }
+
+#Login {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 16px 10px 6px;
+  border-radius: 10px;
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+  #Login:hover {
+    animation: pulse 2s infinite; }
+
+#Loading {
+  opacity: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%); }
+
 #Profile {
   border-radius: 25px;
-  background-color: white;
   padding-top: 30px;
-  padding-bottom: 300px; }
+  padding-bottom: 300px;
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
 
 #ProfileSideBar img {
   opacity: 0.9; }
@@ -84,6 +130,6 @@ body {
   0% {
     background-color: #ebebeb; }
   50% {
-    background-color: whitesmoke; }
+    background-color: white; }
   100% {
     background-color: #ebebeb; } }

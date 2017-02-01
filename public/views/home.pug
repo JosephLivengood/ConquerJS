@@ -1,9 +1,12 @@
 doctype html
 html(lang='en')
     head
-        title= user.name
+        title ConquerJS
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous")
         link(href='../style/common.css' rel='stylesheet' type='text/css')
+        script(src="https://use.fontawesome.com/21b68c7c36.js")
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css')
     body
-        #profileApp(style='opacity: 0')
-        script(src='../js/profile.bundle.js', type='text/javascript')
+        #App
+        i.fa.fa-spinner.fa-pulse.fa-3x.fa-fw#Loading
+        script(src='../js/home.bundle.js', type='text/javascript')
