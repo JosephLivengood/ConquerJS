@@ -16,7 +16,7 @@
     "url": "git+https://github.com/JosephLivengood/Boilerplate.git"
   },
   "author": "Joseph Livengood",
-  "license": "ISC",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/JosephLivengood/Boilerplate/issues"
   },
