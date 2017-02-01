@@ -9,13 +9,16 @@ Node/Express, MongoDB, ReactJS, and Passport Authentication boilerplate for anyo
 
 #### Also includes:
 * Chai/Mocha - Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.
-* ReactTooltip - ReactTooltip is the most versitile easy tooltip component for React. Read more about it [here](https://github.com/wwayne/react-tooltip).
 * Webpack/Babel - Webpack takes modules with dependencies and generates static assets representing those modules.
 * Sass - Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
+* ReactTooltip - ReactTooltip is the most versitile easy tooltip component for React. Read more about it [here](https://github.com/wwayne/react-tooltip).
+* Bootstrap v4 - Bootstrap is the most popular HTML, CSS, and JS framework in the world for building responsive, mobile-first projects on the web. It also speeds up development greatly.
+* Font Awesome - Font Awesome gives you scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS.
+* Bootstrap-Social - Easy way to bring social icons and login styled buttons in an extremely lightweight stylesheet.
 
 ## Structure
 
-The aim of this project is to have an extremely scaleable solution for your next project with modularity at every point. It should be extremely simple to add or remove features including authentication strategies; it should not require editing of the low level _how_ to make it work! Files are small, understandable, and you won't find duplicate code.
+The aim of this project is to have an extremely scaleable solution for your next project with modularity at every point on the back and front. It should be extremely simple to add or remove features including authentication strategies; it should not require editing of the low level _how_ to make it work! Files are small, understandable, and you won't find duplicate code.
 
 #### Basic Structure:
 ```
@@ -24,15 +27,23 @@ Boilerplate/
     /auth
     /controllers
     /routes
+  /client
+    /app
+      /commonComponents
+      /scenes
   /public
     /views
+    /style
     /resources
+    /js
   /test
   server.js
 ```
 #### Reducers
 You will often find _'reducers'_ within packages similar to below:
 ```javascript
+app/routes/index.js
+
 const apiRoutes = require('./api/apiIndex.js');
 const publicRoutes = require('./public/publicIndex.js');
 const errorMiddleware = require('./errorMiddleware.js');
@@ -70,7 +81,10 @@ cp sample.env .env
 ##### Set enviromental variables in `.env`
 * Database should look similar to `mongodb://[username]:[password]@12345.mlab.com:17109/boilerplate`
 * Ignore TEST_USER_ID for this step
-* Obtain auth client id and secrets from atleast 1 service (GitHub recomended in acount settings)- for local development(w/ GitHub), the callback url is `http://localhost:8080/auth/github/callback`
+* Obtain auth client id and secrets from atleast 1 service (GitHub recomended in acount settings)- for local development(w/ GitHub), the callback url is `http://localhost:8080/auth/github/callback` if running locally
+
+##### Excute `NPM run build-react` and `NPM run build-css`
+* This webpacks the React files into _public/js_ and compiles the Sass into css from _client/style_ to _public/style_
 
 ##### Execute `NPM start`
 ```
@@ -78,7 +92,7 @@ Successful database connection
 App listening on port 8080
 ```
 
-##### Authenticate at http://localhost:8080/auth/github
+##### Authenticate at http://localhost:8080/auth/github or by clicking the login button
 * Take note of the returned user `id` (not `_id`)
 
 ##### Set final enviromental variable in `.env`
@@ -92,10 +106,12 @@ App listening on port 8080
 
 ## Development (for personal projects)
 
+### See [DEVELOPING.md](DEVELOPING.md)) for more in depth info on all dependancies in the repo:
+
 ##### Webpack
 
-Webpack compiles your .jsx es6 React.js files into .js browser-friendly cross-compatable files. Compilation/building occurs from _client/app_ to _public/js_. This project sets you up to use multiple entry points. Each 'scene' in _client/app/scenes_ should be a next entry point defined in _webpack.config.js_. Its name in the config will determine the name of the compiled file that will be used as an include in your html/jade file. For example in _webpack.config.js_:
-```json
+Webpack compiles your .jsx es6 React.js files into .js browser-friendly cross-compatable files. Compilation/building occurs from _client/app_ to _public/js_. This project sets you up to use multiple entry points. Each 'scene' in _client/app/scenes_ should be a new entry point defined in _webpack.config.js_. Its name in the config will determine the name of the compiled file that will be used as an include in your html/jade file. For example in _webpack.config.js_:
+```
 entry: {
     login: APP_DIR+"/scenes/login/index.jsx",
 }
