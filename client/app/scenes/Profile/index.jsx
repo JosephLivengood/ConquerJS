@@ -8,6 +8,9 @@ import ProfileSideBar from './components/ProfileSideBar/index.jsx';
 
 
 class Profile extends React.Component {
+    componentDidMount () {
+        document.getElementById('profileApp').className += ' fadeItIn';
+    }
     render () {
         return (
             <div id='Profile' className='container'>
