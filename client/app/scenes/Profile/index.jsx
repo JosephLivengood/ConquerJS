@@ -21,6 +21,7 @@ class Profile extends React.Component {
                     <div className='col-sm-7'>
                         <ClickScore />
                         <Account />
+                        <h3><a href='/'>Go back</a> for more info and a link to the repository!</h3>
                     </div>
                     <div className='col-sm-3'>
                         <TopClickScorers />
