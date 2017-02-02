@@ -14,8 +14,7 @@ class Home extends React.Component {
         
         return (
             <div id='Home'>
-                <Banner />
-                <Login authStrats={authStrats}/>
+                <Login authStrats={authStrats} />
             </div>
         );
     }
